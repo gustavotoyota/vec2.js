@@ -183,10 +183,12 @@ Vec2.prototype.rotate = function (angle) {
 };
 
 // Comparison functions
-Vec2.prototype.equal = function (v) {
+Vec2.prototype.equal = function (v, epsilon) {
+    epsilon = epsilon || 1e-15;
     return this.x === v.x && this.y === v.y;
 };
-Vec2.prototype.notEqual = function (v) {
+Vec2.prototype.notEqual = function (v, epsilon) {
+    epsilon = epsilon || 1e-15;
     return this.x !== v.x || this.y !== v.y;
 };
 Vec2.prototype.less = function (v) {
