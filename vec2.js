@@ -113,7 +113,7 @@ Vec2.prototype.dist = function (v) {
     return this.sub(v).len();
 };
 Vec2.prototype.normal = function () {
-    return this.div(this.len());
+    return this.div(Vec2(this.len() || 1));
 };
 Vec2.prototype.faceforward = function (incident, reference) {
     return reference.dot(incident) < 0 ? Vec2(this) : this.neg();
